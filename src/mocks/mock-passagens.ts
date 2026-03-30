@@ -1,4 +1,4 @@
-import type { Passagem } from "./types";
+import type { Passagem } from "../types";
 
 export const mockPassagens: Passagem[] = [
   {
