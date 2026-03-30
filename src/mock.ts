@@ -1,0 +1,58 @@
+import type { Passagem } from "./types";
+
+export const mockPassagens: Passagem[] = [
+  {
+    id: 1,
+    passageiro: "João Silva",
+    assento: 17,
+    origem: "Brasília",
+    destino: "Rio de Janeiro",
+    data: new Date("2024-07-15"),
+    status: "confirmada",
+  },
+  {
+    id: 2,
+    passageiro: "Maria Oliveira",
+    assento: 5,
+    origem: "Brasília",
+    destino: "Salvador",
+    data: new Date("2024-08-20"),
+    status: "cancelada",
+  },
+  {
+    id: 3,
+    passageiro: "Carlos Pereira",
+    assento: 12,
+    origem: "Brasília",
+    destino: "Porto Alegre",
+    data: new Date("2024-09-10"),
+    status: "pendente",
+  },
+  {
+    id: 4,
+    passageiro: "Carlos Pereira",
+    assento: 12,
+    origem: "Brasília",
+    destino: "Porto Alegre",
+    data: new Date("2024-09-10"),
+    status: "pendente",
+  },
+  {
+    id: 5,
+    passageiro: "Carlos Pereira",
+    assento: 12,
+    origem: "Brasília",
+    destino: "Porto Alegre",
+    data: new Date("2024-09-10"),
+    status: "pendente",
+  },
+  {
+    id: 6,
+    passageiro: "Carlos Pereira",
+    assento: 12,
+    origem: "Brasília",
+    destino: "Porto Alegre",
+    data: new Date("2024-09-10"),
+    status: "pendente",
+  },
+];

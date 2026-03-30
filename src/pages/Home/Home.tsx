@@ -1,3 +1,9 @@
+import "./styles.css";
+
 export function Home() {
-  return <h1>Sistema de Reserva de Passagens</h1>
+  return (
+  <div className="HomeComponent">
+    <h1>Sistema de Reserva de Passagens</h1>
+    </div>
+    )
 }
