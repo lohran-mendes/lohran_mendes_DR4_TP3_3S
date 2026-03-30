@@ -1,0 +1,76 @@
+.ticket-form {
+	width: min(100%, 460px);
+	margin: 1.5rem auto;
+	padding: 1.25rem;
+	display: grid;
+	gap: 0.9rem;
+	border-radius: 14px;
+	border: 1px solid #bfdbfe;
+	background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+	box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+.ticket-form-title {
+	margin: 0 0 0.35rem;
+	color: #0a2c4f;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.ticket-form-field {
+	display: grid;
+	gap: 0.4rem;
+	color: #1e293b;
+	font-weight: 600;
+}
+
+.ticket-form-field input {
+	width: 100%;
+	padding: 0.65rem 0.75rem;
+	border: 1px solid #cbd5e1;
+	border-radius: 10px;
+	background-color: #ffffff;
+	color: #0f172a;
+	font-size: 0.95rem;
+	transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.ticket-form-field input::placeholder {
+	color: #94a3b8;
+}
+
+.ticket-form-field input:focus {
+	outline: none;
+	border-color: #005aa8;
+	box-shadow: 0 0 0 3px rgba(0, 90, 168, 0.16);
+}
+
+.ticket-form-button {
+	margin-top: 0.2rem;
+	border: none;
+	border-radius: 10px;
+	padding: 0.75rem 1rem;
+	background: linear-gradient(135deg, #003f7a 0%, #005aa8 100%);
+	color: #f8fafc;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+}
+
+.ticket-form-button:hover {
+	filter: brightness(1.04);
+	box-shadow: 0 8px 18px rgba(0, 63, 122, 0.25);
+}
+
+.ticket-form-button:active {
+	transform: translateY(1px);
+}
+
+@media (max-width: 520px) {
+	.ticket-form {
+		margin: 1rem auto;
+		padding: 1rem;
+	}
+}

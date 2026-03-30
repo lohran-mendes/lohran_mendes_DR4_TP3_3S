@@ -1,0 +1,50 @@
+.app-button {
+	border: none;
+	border-radius: 10px;
+	padding: 0.7rem 1rem;
+	background: linear-gradient(135deg, #003f7a 0%, #005aa8 100%);
+	color: #f8fafc;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+}
+
+.app-button:hover {
+	filter: brightness(1.04);
+	box-shadow: 0 8px 18px rgba(0, 63, 122, 0.25);
+}
+
+.app-button:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 90, 168, 0.18);
+}
+
+.app-button:active {
+	transform: translateY(1px);
+}
+
+.app-button-success {
+	background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+}
+
+.app-button-success:hover {
+	box-shadow: 0 8px 18px rgba(46, 125, 50, 0.26);
+}
+
+.app-button-danger {
+	background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%);
+}
+
+.app-button-danger:hover {
+	box-shadow: 0 8px 18px rgba(198, 40, 40, 0.26);
+}
+
+.app-button-warning {
+	background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+}
+
+.app-button-warning:hover {
+	box-shadow: 0 8px 18px rgba(245, 158, 11, 0.3);
+}

@@ -1,0 +1,22 @@
+.seat-card {
+	border-radius: 12px;
+	padding: 16px;
+	color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.seat-card h2 {
+	font-size: 1.1rem;
+}
+
+.seat-card.reservado {
+	background-color: #c62828;
+}
+
+.seat-card.disponivel {
+	background-color: #2e7d32;
+}
