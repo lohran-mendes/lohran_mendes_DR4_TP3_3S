@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import { Route, Routes } from "react-router";
 
 import { TicketForm, TravelList } from "./components";
 import type { DadosPassagem, Passagem } from "./types";
 import { BaseLayout } from "./layouts";
+import { Home } from "./pages/Home/Home";
 
 const mockPassagens: Passagem[] = [
   {
@@ -101,31 +103,89 @@ function App() {
     );
   };
 
-  const updatePassagem = (id: number) => {
+  const selectPassagemForUpdate = (id: number) => {
     setPassagemDataForUpdate(
       passagens.find((passagem) => passagem.id === id) || null,
     );
-    console.log(
-      "Passagem selecionada para atualização:",
-      passagemDataForUpdate,
+  };
+
+  const updatePassagem = (dadosPassagem: DadosPassagem) => {
+    if (!passagemDataForUpdate) {
+      return;
+    }
+
+    const isDuplicateAssento = passagens.some(
+      (passagem) =>
+        passagem.id !== passagemDataForUpdate.id &&
+        passagem.assento === dadosPassagem.assento,
     );
+
+    if (isDuplicateAssento) {
+      alert(
+        `O assento ${dadosPassagem.assento} já está reservado. Por favor, escolha outro assento.`,
+      );
+      return;
+    }
+
+    setPassagens((prevPassagens) =>
+      prevPassagens.map((passagem) =>
+        passagem.id === passagemDataForUpdate.id
+          ? {
+              ...passagem,
+              passageiro: dadosPassagem.passageiro,
+              assento: dadosPassagem.assento,
+              destino: dadosPassagem.destino,
+            }
+          : passagem,
+      ),
+    );
+
+    setPassagemDataForUpdate(null);
   };
 
   return (
-    <>
-      <BaseLayout>
-        <h1>Expresso Horizon - Reserva de Passagens</h1>
-        <TicketForm
-          addNewPassagem={addPassagem}
-          passagemDataForUpdate={passagemDataForUpdate}
-        />
-        <TravelList
-          passagens={passagens}
-          removePassagem={removePassagem}
-          updatePassagem={updatePassagem}
-        />
-      </BaseLayout>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <BaseLayout>
+            <Home />
+          </BaseLayout>
+        }
+      />
+      <Route
+        path="/Booking"
+        element={
+          <BaseLayout>
+            <TicketForm
+              addNewPassagem={addPassagem}
+              updatePassagem={updatePassagem}
+              passagemDataForUpdate={passagemDataForUpdate}
+            />
+          </BaseLayout>
+        }
+      />
+      <Route
+        path="/Dashboard"
+        element={
+          <BaseLayout>
+            <TravelList
+              passagens={passagens}
+              removePassagem={removePassagem}
+              updatePassagem={selectPassagemForUpdate}
+            />
+          </BaseLayout>
+        }
+      />
+      <Route
+        path="/teste"
+        element={
+          <BaseLayout>
+            <h1>Teste</h1>
+          </BaseLayout>
+        }
+      />
+    </Routes>
   );
 }
 
